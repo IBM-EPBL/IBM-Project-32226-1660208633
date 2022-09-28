@@ -1,0 +1,10 @@
+
+def results(command):
+    from ibm_db import fetch_assoc
+
+    ret = []
+    result = fetch_assoc(command)
+    while result:
+    ret.append(result)
+        result = fetch_assoc(command)
+    return ret
